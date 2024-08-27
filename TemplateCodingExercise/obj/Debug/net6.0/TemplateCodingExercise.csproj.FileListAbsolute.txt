@@ -1,0 +1,15 @@
+D:\C#\Classes\TemplateCodingExercise\bin\Debug\net6.0\TemplateCodingExercise.exe
+D:\C#\Classes\TemplateCodingExercise\bin\Debug\net6.0\TemplateCodingExercise.deps.json
+D:\C#\Classes\TemplateCodingExercise\bin\Debug\net6.0\TemplateCodingExercise.runtimeconfig.json
+D:\C#\Classes\TemplateCodingExercise\bin\Debug\net6.0\TemplateCodingExercise.dll
+D:\C#\Classes\TemplateCodingExercise\bin\Debug\net6.0\TemplateCodingExercise.pdb
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.csproj.AssemblyReference.cache
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.AssemblyInfoInputs.cache
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.AssemblyInfo.cs
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.csproj.CoreCompileInputs.cache
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.dll
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\refint\TemplateCodingExercise.dll
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.pdb
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\TemplateCodingExercise.genruntimeconfig.cache
+D:\C#\Classes\TemplateCodingExercise\obj\Debug\net6.0\ref\TemplateCodingExercise.dll
