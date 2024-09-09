@@ -2,36 +2,18 @@
 
 namespace Coding.Exercise
 {
-    public class Dog
+    public static class StringsTransformator
     {
-        // TODO
-        string Name;
-        string Breed;
-        int Weight;
-
-        public Dog(string name, string breed, int weight)
+        public static string TransformSeparators(
+            string input,
+            string originalSeparator,
+            string targetSeparator)
         {
-            Name = name;    
-            Breed = breed;
-            Weight = weight;
-        }
+            //your code goes here
+            string [] result = input.Split(originalSeparator);
+            string taregt = string.Join(targetSeparator, result);
 
-        public Dog(string name, int weight, string breed = "mixed-breed")
-        {
-            Name = name;
-            Weight = weight;
-            Breed = breed;
-        }
-
-        public string Describe(int weight)
-        {
-            var weightDescription = "";
-
-            if (weight < 5) { weightDescription = "tiny"; }
-            else if ( (5 < weight) && (weight < 30) ) { weightDescription = "medium";  }
-            else { weightDescription = "large"; }
-
-            return "This dog is named " + Name + ", it's a " + Breed + " , and it weighs " + weight + ", so it's a " + weightDescription + "dog.";
+            return taregt;
         }
     }
 
@@ -39,9 +21,6 @@ namespace Coding.Exercise
     {
         static void Main(string[] args)
         {
-            var dog = new Dog("Lucky", 25, "german shepherd");
-            dog.Describe(25);
         }
     }
 }
-
