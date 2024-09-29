@@ -1,26 +1,56 @@
-﻿using System;
-
-namespace Coding.Exercise
+﻿var ex = new Exercise();
+var strings = new List<string> { "bobcat", "wolverine", "grizzly" };
+var result = ex.ProcessAll(strings);
+Console.WriteLine(result);
+public class Exercise
 {
-    public static class StringsTransformator
+    public List<string> ProcessAll(List<string> words)
     {
-        public static string TransformSeparators(
-            string input,
-            string originalSeparator,
-            string targetSeparator)
-        {
-            //your code goes here
-            string [] result = input.Split(originalSeparator);
-            string taregt = string.Join(targetSeparator, result);
+        var stringsProcessors = new List<StringsProcessor>
+                {
+                    new StringsTrimmingProcessor(),
+                    new StringsUppercaseProcessor()
+                };
 
-            return taregt;
+        List<string> result = words;
+        foreach (var stringsProcessor in stringsProcessors)
+        {
+            result = stringsProcessor.Process(result);
         }
+        return result;
+    }
+}
+
+public class StringsProcessor
+{
+    public List<string> Process(List<string> strings)
+    {
+        var result = new List<string>();
+        var value = "";
+        foreach (var item in strings)
+        {
+            if(modifyType == "trim")
+            {
+                value = item.Substring(0, item.Length / 2);
+            }
+            else
+            {
+                value = item.ToUpper();
+            }
+            result.Add(value);
+        }    
+        return result;
     }
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
+    protected virtual string? modifyType => null;
+}
+
+public class StringsTrimmingProcessor : StringsProcessor
+{
+    protected override string? modifyType => "trim";
+}
+
+public class StringsUppercaseProcessor : StringsProcessor
+{
+    protected override string? modifyType => "upper";
 }
