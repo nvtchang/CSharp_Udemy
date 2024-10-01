@@ -1,17 +1,4 @@
 ﻿
-
-//Cheddar cheddar = new Cheddar();
-//Console.WriteLine("Variable of type Cheddar");
-//Console.WriteLine(cheddar.Name);
-
-
-//Console.WriteLine("Variable of type ingredient");
-//Ingredient ingredient = new Cheddar();
-//Console.WriteLine(ingredient.Name);
-
-//Console.WriteLine(cheddar.PublicMethod());
-//Console.WriteLine(cheddar.ProtectedMethod());
-//Console.WriteLine(cheddar.PrivateMethod());
 var ingredients = new List<Ingredient>
 {
     new Cheddar(),
@@ -24,6 +11,11 @@ var ingredients = new List<Ingredient>
 foreach (var ingredient in ingredients)
 {
     Console.WriteLine(ingredient.Name);
+}
+public class Pizza
+{
+    private List<Ingredient> _ingredients = new List<Ingredient>();
+    public void AddIngredient(Ingredient ingredients) => _ingredients.Add(ingredients);
 }
 
 public class Ingredient
@@ -38,7 +30,7 @@ public class Ingredient
         "This method is PROTECTED in the Ingredient class.";
 }
 
-public class Cheddar : Ingredient
+public class Cheddar : Cheese
 {
     public override string Name => "Cheddar cheese";
     public int AgedMonthed { get; set; }
@@ -50,13 +42,18 @@ public class Cheddar : Ingredient
     }
 }
 
+public class Cheese : Ingredient
+{
+
+}
+
 public class TomatoSauce : Ingredient
 {
     public override string Name => "Tomato sauce";
     public int TomatosIn100Grams { get; set; }
 }
 
-public class Mozzarella : Ingredient
+public class Mozzarella : Cheese
 {
     public override string Name => "Mozzarella";
     public bool IsLight { get; }
