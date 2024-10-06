@@ -1,56 +1,69 @@
-﻿var ex = new Exercise();
-var strings = new List<string> { "bobcat", "wolverine", "grizzly" };
-var result = ex.ProcessAll(strings);
-Console.WriteLine(result);
-public class Exercise
+﻿public static class ExerciseShapes
 {
-    public List<string> ProcessAll(List<string> words)
+    public static List<double> GetShapesAreas(List<Shape> shapes)
     {
-        var stringsProcessors = new List<StringsProcessor>
-                {
-                    new StringsTrimmingProcessor(),
-                    new StringsUppercaseProcessor()
-                };
+        var result = new List<double>();
 
-        List<string> result = words;
-        foreach (var stringsProcessor in stringsProcessors)
+        foreach (var shape in shapes)
         {
-            result = stringsProcessor.Process(result);
+            result.Add(shape.CalculateArea());
         }
+
         return result;
     }
 }
 
-public class StringsProcessor
+//your code goes here - define the Shape class
+public abstract class Shape {
+    public abstract double CalculateArea();   
+}
+
+public class Square : Shape
 {
-    public List<string> Process(List<string> strings)
+    public double Side { get; }
+
+    public Square(double side)
     {
-        var result = new List<string>();
-        var value = "";
-        foreach (var item in strings)
-        {
-            if(modifyType == "trim")
-            {
-                value = item.Substring(0, item.Length / 2);
-            }
-            else
-            {
-                value = item.ToUpper();
-            }
-            result.Add(value);
-        }    
-        return result;
+        Side = side;
     }
 
-    protected virtual string? modifyType => null;
+    public override double CalculateArea()
+    {
+        return Side*Side;
+    }
+    //your code goes here
 }
 
-public class StringsTrimmingProcessor : StringsProcessor
+
+public class Rectangle : Shape
 {
-    protected override string? modifyType => "trim";
+    public double Width { get; }
+    public double Height { get; }
+
+    public Rectangle(double width, double height)
+    {
+        Width = width;
+        Height = height;
+    }
+
+    public override double CalculateArea()
+    {
+        return Width*Height;
+    }
+    //your code goes here
 }
 
-public class StringsUppercaseProcessor : StringsProcessor
+public class Circle : Shape
 {
-    protected override string? modifyType => "upper";
+    public double Radius { get; }
+
+    public Circle(double radius)
+    {
+        Radius = radius;
+    }
+    public override double CalculateArea()
+    {
+        return Math.PI*Radius*Radius;
+    }
+    //your code goes here
 }
