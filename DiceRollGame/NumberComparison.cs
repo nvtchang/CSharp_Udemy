@@ -15,7 +15,7 @@ namespace DiceRollGame
                 Console.WriteLine("You win");
             } else
             {
-                Console.WriteLine("Wrong number");
+                Console.WriteLine("Enter number:");
             }
         }
     }
