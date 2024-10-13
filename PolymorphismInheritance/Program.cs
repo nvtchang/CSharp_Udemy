@@ -1,4 +1,14 @@
-﻿var numbers = new List<int> { 1, 2, 5, 6 , -11, 12,-14, 18 };
+﻿using PolymorphismInheritance.Extensions;
+var multiLine = @"aaaa
+aaa
+aaa
+aaa";
+
+Console.WriteLine(multiLine.CountLines());
+Console.WriteLine(StringExtension.CountLines(multiLine));
+Console.WriteLine(Season.Spring.Next());
+
+var numbers = new List<int> { 1, 2, 5, 6 , -11, 12,-14, 18 };
 var cal = new NumberSumCalculator();
 var posCal = new NumberSumCalculator();
 var shallAddPositiveOnly = true;
@@ -8,6 +18,8 @@ NumberSumCalculator calculator = shallAddPositiveOnly ? new NumberPositiveCalcul
 int result = calculator.Calculator(numbers);
 
 Console.WriteLine(result);
+
+
 public class NumberSumCalculator {
     public int Calculator(List<int> numbers)
     {
@@ -32,4 +44,12 @@ public class NumberPositiveCalculator : NumberSumCalculator
     {
         return number > 0;
     }
+}
+
+public enum Season
+{
+    Spring, 
+    Summer,
+    Autumn,
+    Winter
 }
